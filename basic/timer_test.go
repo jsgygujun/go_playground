@@ -26,14 +26,14 @@ func Test_Timer02(t *testing.T) {
 	}
 }
 
-// 等待指定的时间
+// 等待指定的时间, time.After
 func Test_Timer03(t *testing.T) {
 	fmt.Printf("now: %v\n", time.Now())
 	<-time.After(5 * time.Second) // 阻塞等待5秒
 	fmt.Printf("new: %v\n", time.Now())
 }
 
-// 非阻塞延迟执行
+// 非阻塞延迟执行, time.AfterFunc
 func Test_Timer04(t *testing.T) {
 	fmt.Printf("now: %v\n", time.Now())
 	time.AfterFunc(5*time.Second, func() {
